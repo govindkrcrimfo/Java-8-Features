@@ -3,6 +3,7 @@
 
 **Lambda Expressions and Functional Interface :-** Enable concise representation of anonymous functions, reducing boilerplate code for functional interfaces.
 
+### Mainly Focus on Stream Api Questions for Interview
 **Stream API :-**  Provides a functional approach to process data collections with operations like filter, map, and reduce, supporting parallel execution.
 
 **Default Methods & Static Methods in Interfaces :-** Allows adding methods with implementation to interfaces without breaking existing code.
