@@ -36,5 +36,19 @@ public class EX1 {
         List<Integer> lOdd = l1.stream().filter(n -> n % 2 == 1).map(k -> 3*k).collect(Collectors.toList());
         System.out.println("odd number multiplye by 3 " + lOdd);
 
+        /*
+            1. mulitple filter -> find the number greater than 2 and less than 8
+            2. multiple map -> double the nubmer then add 5 
+         */
+        List<Integer> rangeL=l1.stream()
+        .filter(n->n>2)
+        .filter(n->n<8).toList();
+        System.out.println("Number greater than 2 and less than 8 "+rangeL);
+
+        List<Integer> lmap=l1.stream()
+        .map(n->n*2)
+        .map(n->n+5).toList();
+        System.out.println("doubled the nubmer then 5 added "+lmap);
+
     }
 }
