@@ -18,14 +18,23 @@ public class EX1 {
         /*
          * 1.Convert list of strings to uppercase
          * 2.Filter strings that start with a specific character
+         * 3. Find names whose length <5 & convert to uppercase
          */
 
-        List<String> ls = Arrays.asList("Govind ", "kumar", "Gupta", "Howrah", "gopal");
+        List<String> ls = Arrays.asList("Govind ", "Raj","kumar", "Gupta", "Howrah", "gopal","Ram","Golu");
         List<String> upperLs=ls.stream().map(s->s.toUpperCase()).toList();
         List<String > strtwithG=ls.stream().filter(s->s.toUpperCase().startsWith("G")).toList();
+        List<String> lowerCase=ls.stream().filter(n->n.length()<5).map(n->n.toUpperCase()).toList();
         System.out.println("Upper case  string : "+upperLs);
-        System.out.println();
         System.out.println("String starts with - "+strtwithG);
+        System.out.println("Name converted to upper case whose length < 5 "+lowerCase );
+
+        /*
+         * From a number list, extract only odd numbers & multiply them by 3
+         */
+        List<Integer> l1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        List<Integer> lOdd = l1.stream().filter(n -> n % 2 == 1).map(k -> 3*k).collect(Collectors.toList());
+        System.out.println("odd number multiplye by 3 " + lOdd);
 
     }
 }
