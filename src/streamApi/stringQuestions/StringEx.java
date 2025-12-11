@@ -1,6 +1,8 @@
 package streamApi.stringQuestions;
 
+import java.io.StringReader;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StringEx {
@@ -39,6 +41,36 @@ public class StringEx {
         //Q3.seperate each string based on spaces " "
         List<String> sl=Arrays.stream(s.split(" ")).toList();
         System.out.println(sl);
-        System.out.println(s);
+        System.out.println();
+
+        // Q4.reverse a string s=s="I am java developer";
+        String rev = s.chars().mapToObj(c -> String.valueOf((char) c))
+                .reduce(" ", (a, b) -> b + a);
+        System.out.println("reversed String " + rev);
+        System.out.println();
+
+        //Q5. reverse words in a sentence 
+        // s=s="I am java developer";
+        // output ="developer java am I";
+
+        String rd=Arrays.stream(s.split(" "))
+        .reduce("", (a ,b )->b+" "+a).trim();
+        System.out.println("only word reversed :- "+rd);
+        System.out.println();
+
+        //Q6.reverse each word in a sentence 
+        // s=s="I am java developer";
+        // output ="I ma avaj repoleved";
+        String rwd=Arrays.stream(s.split(" "))
+        .map(k->new StringBuilder(k).reverse().toString())
+        .collect(Collectors.joining(" "));
+        System.out.println("wordwise reverse : - "+rwd);
+        System.out.println();
+        
+        
+
+
+          
+        
     }
 }
